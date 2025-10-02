@@ -1,0 +1,100 @@
+{
+  "CodeGenerationMode": 4,
+  "ContextClassName": "DemoContextSC",
+  "ContextNamespace": null,
+  "FilterSchemas": false,
+  "IncludeConnectionString": false,
+  "ModelNamespace": "",
+  "OutputContextPath": "Demo\\Context\\",
+  "OutputPath": "Demo",
+  "PreserveCasingWithRegex": true,
+  "ProjectRootNamespace": "Scheduler.Infrastructure",
+  "Schemas": null,
+  "SelectedHandlebarsLanguage": 2,
+  "SelectedToBeGenerated": 0,
+  "T4TemplatePath": null,
+  "Tables": [
+    {
+      "Name": "[dbo].[MailSender]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[dbo].[MailServiceParameter]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[dbo].[MailServiceRelation]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[dbo].[MailTemplate]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[dbo].[QRTZ_BLOB_TRIGGERS]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[dbo].[QRTZ_CALENDARS]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[dbo].[QRTZ_CRON_TRIGGERS]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[dbo].[QRTZ_FIRED_TRIGGERS]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[dbo].[QRTZ_JOB_DETAILS]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[dbo].[QRTZ_LOCKS]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[dbo].[QRTZ_PAUSED_TRIGGER_GRPS]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[dbo].[QRTZ_SCHEDULER_STATE]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[dbo].[QRTZ_SIMPLE_TRIGGERS]",
+      "ObjectType": 0
+    },
+    {
+      "Name": "[dbo].[QRTZ_SIMPROP_TRIGGERS]",
+      "ObjectType": 0
+    }
+  ],
+  "UiHint": null,
+  "UncountableWords": null,
+  "UseAsyncStoredProcedureCalls": true,
+  "UseBoolPropertiesWithoutDefaultSql": true,
+  "UseDatabaseNames": false,
+  "UseDatabaseNamesForRoutines": true,
+  "UseDateOnlyTimeOnly": true,
+  "UseDbContextSplitting": true,
+  "UseDecimalDataAnnotationForSprocResult": true,
+  "UseFluentApiOnly": false,
+  "UseHandleBars": false,
+  "UseHierarchyId": false,
+  "UseInflector": true,
+  "UseLegacyPluralizer": false,
+  "UseManyToManyEntity": true,
+  "UseNoDefaultConstructor": true,
+  "UseNoNavigations": false,
+  "UseNoObjectFilter": false,
+  "UseNodaTime": false,
+  "UseNullableReferences": true,
+  "UsePrefixNavigationNaming": false,
+  "UseSchemaFolders": true,
+  "UseSchemaNamespaces": false,
+  "UseSpatial": false,
+  "UseT4": false,
+  "UseT4Split": false
+}

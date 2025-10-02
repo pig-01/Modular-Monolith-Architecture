@@ -1,0 +1,68 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+    <IncludeOpenAPIAnalyzers>true</IncludeOpenAPIAnalyzers>
+    <OpenApiGenerateDocuments>true</OpenApiGenerateDocuments>
+    <OpenApiDocumentsDirectory>$(MSBuildProjectDirectory)</OpenApiDocumentsDirectory>
+    <UserSecretsId>962c6f59-9ab4-4865-9f9e-ebf225d4d982</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Asp.Versioning.Http" />
+    <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+    <PackageReference Include="Microsoft.Data.SqlClient" />
+    <PackageReference Include="Microsoft.Extensions.ApiDescription.Server">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Serilog.AspNetCore" />
+    <PackageReference Include="Serilog.Sinks.OpenTelemetry" />
+    <PackageReference Include="Swashbuckle.AspNetCore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Aspire\Aspire.ServiceDefaults\Aspire.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\DataHub.Bizform\DataHub.Bizform.csproj" />
+    <ProjectReference Include="..\DataHub.Cloud\DataHub.Cloud.csproj" />
+    <ProjectReference Include="..\DataHub.Infrastructure\DataHub.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <!-- 預設未來穩定後直接引用dll進入網站(專案參考會被移除) -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Base\src\Base.Domain\Base.Domain.csproj" />
+    <ProjectReference
+      Include="..\..\..\Base\src\Base.Infrastructure.Interface\Base.Infrastructure.Interface.csproj" />
+    <ProjectReference
+      Include="..\..\..\Base\src\Base.Infrastructure.Toolkits\Base.Infrastructure.Toolkits.csproj" />
+    <ProjectReference Include="..\..\..\Base\src\Base.Infrastructure\Base.Infrastructure.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Resource\Image\Demo_logo_s.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <!-- 預設未來穩定後直接引用dll進入網站 -->
+  <!--
+	<ItemGroup>
+		<Reference Include="Base.Domain">
+			<HintPath>..\..\base\Base\net8.0\Base.Domain.dll</HintPath>
+		</Reference>
+		<Reference Include="Base.Infrastructure">
+			<HintPath>..\..\base\Base\net8.0\Base.Infrastructure.dll</HintPath>
+		</Reference>
+		<Reference Include="Base.Infrastructure.Interface">
+			<HintPath>..\..\base\Base\net8.0\Base.Infrastructure.Interface.dll</HintPath>
+		</Reference>
+		<Reference Include="Base.Infrastructure.Toolkits">
+			<HintPath>..\..\base\Base\net8.0\Base.Infrastructure.Toolkits.dll</HintPath>
+		</Reference>
+	</ItemGroup>-->
+
+</Project>

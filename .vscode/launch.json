@@ -1,0 +1,63 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C#: BackEnd [Aspire AppHost] Debug",
+      "type": "dotnet",
+      "request": "launch",
+      "projectPath": "${workspaceFolder}\\Aspire\\Aspire.AppHost\\Aspire.AppHost.csproj"
+    },
+    {
+      "name": "C#: BackEnd [Aspire AppHost] Release",
+      "type": "dotnet",
+      "request": "launch",
+      "projectPath": "${workspaceFolder}\\Aspire\\Aspire.AppHost\\Aspire.AppHost.csproj"
+    },
+    {
+      "name": "C#: Main.WebApi [https]",
+      "type": "dotnet",
+      "request": "launch",
+      "preLaunchTask": "build-main-webapi",
+      "projectPath": "${workspaceFolder}\\Main\\src\\Main.WebApi\\Main.WebApi.csproj",
+      "launchConfigurationId": "TargetFramework=;https"
+    },
+    {
+      "name": "C#: Main.WebApi [http]",
+      "type": "dotnet",
+      "request": "launch",
+      "preLaunchTask": "build-main-webapi",
+      "projectPath": "${workspaceFolder}\\Main\\src\\Main.WebApi\\Main.WebApi.csproj",
+      "launchConfigurationId": "TargetFramework=;http"
+    },
+    {
+      "name": "C#: DataHub [https]",
+      "type": "dotnet",
+      "request": "launch",
+      "preLaunchTask": "build-datahub",
+      "projectPath": "${workspaceFolder}\\DataHub\\src\\DataHub\\DataHub.csproj",
+      "launchConfigurationId": "TargetFramework=;https"
+    },
+    {
+      "name": "C#: DataHub [http]",
+      "type": "dotnet",
+      "request": "launch",
+      "preLaunchTask": "build-datahub",
+      "projectPath": "${workspaceFolder}\\DataHub\\src\\DataHub\\DataHub.csproj",
+      "launchConfigurationId": "TargetFramework=;http"
+    },
+    {
+      "name": "Attach to Process",
+      "type": "coreclr",
+      "request": "attach"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Launch All Services",
+      "configurations": [
+        "C#: Main.WebApi [https]",
+        "C#: DataHub [https]"
+      ]
+    }
+  ]
+}

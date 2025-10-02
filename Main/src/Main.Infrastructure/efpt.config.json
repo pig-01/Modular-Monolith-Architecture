@@ -1,0 +1,68 @@
+﻿{
+   "CodeGenerationMode": 4,
+   "ContextClassName": "DemoContextSC",
+   "ContextNamespace": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": "",
+   "OutputContextPath": "Demo\\Context\\",
+   "OutputPath": "Demo",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "Main.Infrastructure",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 2,
+   "SelectedToBeGenerated": 0,
+   "T4TemplatePath": null,
+   "Tables": [
+      {
+         "Name": "[dbo].[CustomExposeIndustry]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CustomPlanTemplate]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CustomPlanTemplateDetail]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CustomPlanTemplateVersion]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CustomRequestUnit]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[GriRule]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": null,
+   "UncountableWords": null,
+   "UseAsyncStoredProcedureCalls": true,
+   "UseBoolPropertiesWithoutDefaultSql": true,
+   "UseDatabaseNames": false,
+   "UseDatabaseNamesForRoutines": true,
+   "UseDateOnlyTimeOnly": true,
+   "UseDbContextSplitting": true,
+   "UseDecimalDataAnnotationForSprocResult": true,
+   "UseFluentApiOnly": false,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": true,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": true,
+   "UseNoDefaultConstructor": true,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": true,
+   "UsePrefixNavigationNaming": false,
+   "UseSchemaFolders": true,
+   "UseSchemaNamespaces": false,
+   "UseSpatial": false,
+   "UseT4": false,
+   "UseT4Split": false
+}

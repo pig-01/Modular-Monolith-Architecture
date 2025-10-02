@@ -1,0 +1,11 @@
+global using System.Security.Claims;
+global using Autofac;
+global using Autofac.Extensions.DependencyInjection;
+global using FluentValidation;
+global using MediatR;
+global using Microsoft.AspNetCore.Authorization;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.OpenApi.Models;
+global using Serilog;
+global using static Microsoft.AspNetCore.Http.StatusCodes;

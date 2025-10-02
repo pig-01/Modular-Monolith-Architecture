@@ -1,0 +1,87 @@
+﻿@using System.Net;
+@using Scheduler.Application.Models.Mails;
+@model ResponsibleNotificationModel
+
+<tr>
+    <td colspan="2" style="padding:20px 50px;line-height: 1.8;">
+        <div>
+            <span style="display: inline-block; font-size: 15px;">
+                經系統檢查，您有以下表單尚未填寫，且離到期日僅剩 @Html.Raw(WebUtility.HtmlEncode(Model.DaysUntilExpiration.ToString()))
+                天。請您於到期日前完成填寫，以免影響後續流程。
+            </span>
+        </div>
+    </td>
+</tr>
+@foreach (PlanDocumentGroup plan in Model.PlanGroups)
+{
+    <tr>
+        <td colspan="2" style="padding:20px 50px;line-height: 1.8;">
+            <div>
+                <strong>@Html.Raw(WebUtility.HtmlEncode(plan.PlanName))</strong>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" style="padding: 0 50px; font-size: 15px;">
+            <table width="100%" cellpadding="0" style="border-collapse:collapse; table-layout: fixed; margin: 16px 0;">
+                <thead>
+                    <tr>
+                        <th width="25%" class="label-cell"
+                            style="color: #000000; border-bottom: 1px solid #D3D7E0;  padding: 10px 20px; text-align: center; background: #E2E7EF;">
+                            指標編號</th>
+                        <th width="75%" class="label-cell"
+                            style="color: #000000; border-bottom: 1px solid #D3D7E0;  padding: 10px 20px; text-align: left; background: #E2E7EF;">
+                            期別</th>
+                        <th width="75%" class="label-cell"
+                            style="color: #000000; border-bottom: 1px solid #D3D7E0;  padding: 10px 20px; text-align: left; background: #E2E7EF;">
+                            名稱</th>
+                        <th width="75%" class="label-cell"
+                            style="color: #000000; border-bottom: 1px solid #D3D7E0;  padding: 10px 20px; text-align: left; background: #E2E7EF;">
+                            表單狀態</th>
+                    </tr>
+                </thead>
+                @foreach (DocumentSummary attr in plan.Documents)
+                {
+                    <tr>
+                        <td width="18%"
+                            style="color:#000000; border-bottom: 1px solid #D3D7E0; padding: 10px 20px; text-align:center; background: #FFF;">
+                            @Html.Raw(WebUtility.HtmlEncode(attr.Code))
+                        </td>
+                        <td width="18%"
+                            style="color:#000000; border-bottom: 1px solid #D3D7E0; padding: 10px 20px; text-align:center; background: #FFF;">
+                            @Html.Raw(WebUtility.HtmlEncode(attr.CycleDescription))
+                        </td>
+                        <td width="46%"
+                            style="color:#000000; border-bottom: 1px solid #D3D7E0; padding: 10px 20px; text-align:center; background: #FFF;">
+                            <a target="_blank" href="@Html.Raw(WebUtility.HtmlEncode(attr.Url.ToString()))"
+                                style="font-weight: bold; color: #1773EA;">@Html.Raw(WebUtility.HtmlEncode(attr.PlanDetailName))</a>
+                        </td>
+                        <td width="18%"
+                            style="color:#000000; border-bottom: 1px solid #D3D7E0; padding: 10px 20px; text-align:center; background: #FFF;">
+                            @Html.Raw(WebUtility.HtmlEncode(attr.EndDate.ToString(format: "yyyy/MM/dd")))
+                        </td>
+                    </tr>
+                }
+            </table>
+        </td>
+    </tr>
+}
+<tr>
+    <td colspan="2" style="padding:20px 0px;">
+        <p style="margin-top:20px;text-align: justify; line-height: 1.6; font-size: 15px;">
+            再次感謝您使用我們的服務。若您有任何建議或問題，請於上班日（09:00AM~18:00PM）撥打客服專線：(02)2592-6609，或歡迎利用服務平台：
+            <a href="http://www.Democloud.com/tw/helpdesk-new " target="_blank" style="color:#1773EA;">
+                http://www.Democloud.com/tw/helpdesk-new
+            </a>，由專人為您服務。
+        </p>
+    </td>
+</tr>
+<tr>
+    <td colspan="2" style="padding:0; text-align: right;">
+        <span style="display: inline-block; padding-bottom: 5px; font-size: 15px;">
+            <span style="display: inline-block; text-align: right; line-height: 1.8;">
+                demo 服務團隊 敬上
+            </span>
+        </span>
+    </td>
+</tr>

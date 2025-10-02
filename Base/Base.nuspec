@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+	<metadata>
+		<id>Base.Infrastructure</id>
+		<version>1.0.1</version>
+		<title>Base.Infrastructure</title>
+		<authors>Base.Infrastructure</authors>
+		<owners>Demo</owners>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<readme>README.md</readme>
+		<description>Package Description</description>
+		<dependencies>
+			<group targetFramework="net8.0">
+				<dependency id="Base.Aspose" version="1.0.1" exclude="Build,Analyzers" />
+				<dependency id="Base.Authentication" version="1.0.1" exclude="Build,Analyzers" />
+				<dependency id="Base.Files" version="1.0.1" exclude="Build,Analyzers" />
+				<dependency id="Base.Hangfire" version="1.0.1" exclude="Build,Analyzers" />
+				<dependency id="Base.Infrastructure.Interface" version="1.0.1"
+					exclude="Build,Analyzers" />
+				<dependency id="Base.Infrastructure.Toolkits" version="1.0.1"
+					exclude="Build,Analyzers" />
+				<dependency id="Base.Mail" version="1.0.1" exclude="Build,Analyzers" />
+				<dependency id="Base.Security" version="1.0.1" exclude="Build,Analyzers" />
+				<dependency id="Asp.Versioning.Http" version="8.1.0" exclude="Build,Analyzers" />
+			</group>
+		</dependencies>
+		<files>
+			<file src="Base.Aspose\bin\Debug\*.dll" target="lib\net8.0" />
+			<file src="Base.Authentication\bin\Debug\*.dll" target="lib\net8.0" />
+			<file src="Base.Domain\bin\Debug\*.dll" target="lib\net8.0" />
+			<file src="Base.Files\bin\Debug\*.dll" target="lib\net8.0" />
+			<file src="Base.Hangfire\bin\Debug\*.dll" target="lib\net8.0" />
+			<file src="Base.Infrastructure.Interface\bin\Debug\*.dll" target="lib\net8.0" />
+			<file src="Base.Infrastructure.Toolkits\bin\Debug\*.dll" target="lib\net8.0" />
+			<file src="Base.Mail\bin\Debug\*.dll" target="lib\net8.0" />
+			<file src="Base.Security\bin\Debug\*.dll" target="lib\net8.0" />
+		</files>
+		<frameworkReferences>
+			<group targetFramework="net8.0">
+				<frameworkReference name="Microsoft.AspNetCore.App" />
+			</group>
+		</frameworkReferences>
+	</metadata>
+</package>

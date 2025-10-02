@@ -1,0 +1,91 @@
+@WebAPI_HostAddress_https = https://localhost:7268
+@WebAPI_HostAddress_dev_http = http://192.168.102.11/DataHub
+@WebAPI_HostAddress_http = http://localhost:5062
+
+GET {{WebAPI_HostAddress_dev_http}}/health/
+Accept: application/json
+
+###
+
+# 測試正常的訂單建立
+POST {{WebAPI_HostAddress_https}}/api/v1/Cloud/Provision/
+Content-Type: application/json
+X-Instance-ExpirationDate: 2025-01-10T07:06:12Z
+
+{"id":"100004221","createAt":"2025-02-19T10:08:11+00:00","store":{"id":"default","name":"正體中文","locale":"zh-TW","timezone":"Asia/Taipei","currency":"TWD"},"customer":{"id":"9c497b72-7b28-4162-a4e2-389eb11c4f68","email":"jason_tsai@Demo.com.tw","emailVerified":true,"loginId":null,"enterprises":[]},"enterprise":null,"affiliate":null,"items":[{"sku":"demo_Demo_trial","name":"demo Demo永續指標管理試用版","unitPrice":0,"discount":0,"netPrice":0,"quantity":1,"options":[]}]}
+
+###
+
+# 測試正常的訂單建立
+POST {{WebAPI_HostAddress_https}}/api/v1/Cloud/Provision/
+Content-Type: application/json
+X-Instance-ExpirationDate: 2025-01-10T07:06:12Z
+
+{
+   "CustomerId": "d7583a18-7c15-42a8-bb9c-e3be5d57c6fb",
+   "Email": "2025-01-10T07:06:12Z",
+   "StartDate": "2025-01-10T07:06:12Z",
+   "EndDate": "2025-01-10T07:06:12Z",
+   "Customer": {
+      "email": "jason_te@Demo.com.tw",
+      "emailVerified": false,
+      "id": "d7583a18-7c15-42a8-bb9c-e3be5d57c6fb"
+   },
+   "id": "100003979",
+   "Items": [
+      {
+         "Discount": 0,
+         "Name": "雲端指標管理系統-Demo永續指標管理系統（測試用）",
+         "NetPrice": 0,
+         "Options": [],
+         "Quantity": 1,
+         "Sku": "demo_Demo_trial",
+         "UnitPrice": 0
+      }
+   ],
+   "Store": {
+      "Currency": "TWD",
+      "id": "default",
+      "Locale": "zh-TW",
+      "Name": "正體中文",
+      "Timezone": "Asia/Taipei"
+   }
+}
+
+###
+# 供裝中心開發機測試
+POST {{WebAPI_HostAddress_https}}/api/v1/Cloud/Provision/
+Content-Type: application/json
+X-Instance-ExpirationDate: 2025-01-10T07:06:12Z
+
+{
+   "affiliate": null,
+   "createAt": "2025-02-14T09:27:15+00:00",
+   "customer": {
+      "email": "jason_tsai@Demo.com.tw",
+      "emailVerified": true,
+      "enterprises": [],
+      "id": "9c497b72-7b28-4162-a4e2-389eb11c4f68",
+      "loginId": null
+   },
+   "enterprise:": null,
+   "id": "100004203",
+   "items": [
+      {
+         "discount": 0,
+         "name": "demo Demo永續指標管理試用版",
+         "netPrice": 0,
+         "options": [],
+         "quantity": 1,
+         "sku": "demo_Demo_trial",
+         "unitPrice": 0
+      }
+   ],
+   "store": {
+      "currency": "TWD",
+      "id": "default",
+      "locale": "zh-TW",
+      "name": "正體中文",
+      "timezone": "Asia/Taipei"
+   }
+}

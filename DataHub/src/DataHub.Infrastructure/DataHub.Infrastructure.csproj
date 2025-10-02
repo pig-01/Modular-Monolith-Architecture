@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="efpt.config.json.user" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" />
+    <PackageReference Include="MediatR" />
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <!-- 預設未來穩定後直接引用dll進入網站(專案參考會被移除) -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Base\src\Base.Domain\Base.Domain.csproj" />
+    <ProjectReference
+      Include="..\..\..\Base\src\Base.Infrastructure.Interface\Base.Infrastructure.Interface.csproj" />
+    <ProjectReference
+      Include="..\..\..\Base\src\Base.Infrastructure.Toolkits\Base.Infrastructure.Toolkits.csproj" />
+    <ProjectReference Include="..\..\..\Base\src\Base.Infrastructure\Base.Infrastructure.csproj" />
+    <ProjectReference Include="..\DataHub.Domain\DataHub.Domain.csproj" />
+  </ItemGroup>
+
+  <!-- 預設未來穩定後直接引用dll進入網站 -->
+  <!--
+	<ItemGroup>
+		<Reference Include="Base.Domain">
+			<HintPath>..\..\base\Base\net8.0\Base.Domain.dll</HintPath>
+		</Reference>
+		<Reference Include="Base.Infrastructure">
+			<HintPath>..\..\base\Base\net8.0\Base.Infrastructure.dll</HintPath>
+		</Reference>
+		<Reference Include="Base.Infrastructure.Interface">
+			<HintPath>..\..\base\Base\net8.0\Base.Infrastructure.Interface.dll</HintPath>
+		</Reference>
+		<Reference Include="Base.Infrastructure.Toolkits">
+			<HintPath>..\..\base\Base\net8.0\Base.Infrastructure.Toolkits.dll</HintPath>
+		</Reference>
+	</ItemGroup>-->
+</Project>

@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+    <VersionPrefix>1.0.1</VersionPrefix>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackAsTool>False</PackAsTool>
+    <NeutralLanguage>zh-TW</NeutralLanguage>
+    <SignAssembly>False</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <IncludeReferencedProjects>true</IncludeReferencedProjects>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Title>Base.Infrastructure</Title>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\service\Base.Aspose\Base.Aspose.csproj">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <IncludeOutputAssembly>true</IncludeOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\service\Base.Authentication\Base.Authentication.csproj">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <IncludeOutputAssembly>true</IncludeOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\service\Base.File\Base.Files.csproj">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <IncludeOutputAssembly>true</IncludeOutputAssembly>
+    </ProjectReference>
+    <ProjectReference
+      Include="..\Base.Infrastructure.Interface\Base.Infrastructure.Interface.csproj" />
+    <ProjectReference Include="..\Base.Infrastructure.Toolkits\Base.Infrastructure.Toolkits.csproj" />
+    <ProjectReference Include="..\service\Base.Mail\Base.Mail.csproj">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <IncludeOutputAssembly>true</IncludeOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\service\Base.Security\Base.Security.csproj">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <IncludeOutputAssembly>true</IncludeOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Asp.Versioning.Http" />
+    <PackageReference Include="Dapper" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+</Project>

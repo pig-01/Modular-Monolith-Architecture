@@ -1,0 +1,3 @@
+{
+  "dotnet-test-explorer.testProjectPath": "**/*[Tt]est.@(csproj|vbproj|fsproj)",
+}

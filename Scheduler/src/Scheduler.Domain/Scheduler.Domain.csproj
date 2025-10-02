@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Quartz.AspNetCore" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Base\src\Base.Domain\Base.Domain.csproj" />
+    <ProjectReference
+      Include="..\..\..\Base\src\Base.Infrastructure.Interface\Base.Infrastructure.Interface.csproj" />
+    <ProjectReference
+      Include="..\..\..\Base\src\Base.Infrastructure.Toolkits\Base.Infrastructure.Toolkits.csproj" />
+    <ProjectReference Include="..\..\..\Base\src\Base.Infrastructure\Base.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>

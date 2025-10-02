@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<NoWarn>1701;1702;1591</NoWarn>
+		<VersionPrefix>1.0.1</VersionPrefix>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackAsTool>False</PackAsTool>
+		<NeutralLanguage>zh-TW</NeutralLanguage>
+		<SignAssembly>False</SignAssembly>
+		<DelaySign>False</DelaySign>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference
+			Include="..\..\Base.Infrastructure.Interface\Base.Infrastructure.Interface.csproj" />
+		<ProjectReference
+			Include="..\..\Base.Infrastructure.Toolkits\Base.Infrastructure.Toolkits.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
+
+</Project>

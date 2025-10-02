@@ -1,0 +1,61 @@
+namespace Scheduler.Domain.AggregateModel.QuartzAggregate;
+
+[PrimaryKey("SchedName", "TriggerName", "TriggerGroup")]
+[Table("QRTZ_SIMPROP_TRIGGERS")]
+public partial class QrtzSimpropTrigger
+{
+    [Key]
+    [Column("SCHED_NAME")]
+    [StringLength(120)]
+    public string SchedName { get; set; } = null!;
+
+    [Key]
+    [Column("TRIGGER_NAME")]
+    [StringLength(150)]
+    public string TriggerName { get; set; } = null!;
+
+    [Key]
+    [Column("TRIGGER_GROUP")]
+    [StringLength(150)]
+    public string TriggerGroup { get; set; } = null!;
+
+    [Column("STR_PROP_1")]
+    [StringLength(512)]
+    public string? StrProp1 { get; set; }
+
+    [Column("STR_PROP_2")]
+    [StringLength(512)]
+    public string? StrProp2 { get; set; }
+
+    [Column("STR_PROP_3")]
+    [StringLength(512)]
+    public string? StrProp3 { get; set; }
+
+    [Column("INT_PROP_1")]
+    public int? IntProp1 { get; set; }
+
+    [Column("INT_PROP_2")]
+    public int? IntProp2 { get; set; }
+
+    [Column("LONG_PROP_1")]
+    public long? LongProp1 { get; set; }
+
+    [Column("LONG_PROP_2")]
+    public long? LongProp2 { get; set; }
+
+    [Column("DEC_PROP_1", TypeName = "numeric(13, 4)")]
+    public decimal? DecProp1 { get; set; }
+
+    [Column("DEC_PROP_2", TypeName = "numeric(13, 4)")]
+    public decimal? DecProp2 { get; set; }
+
+    [Column("BOOL_PROP_1")]
+    public bool? BoolProp1 { get; set; }
+
+    [Column("BOOL_PROP_2")]
+    public bool? BoolProp2 { get; set; }
+
+    [Column("TIME_ZONE_ID")]
+    [StringLength(80)]
+    public string? TimeZoneId { get; set; }
+}
