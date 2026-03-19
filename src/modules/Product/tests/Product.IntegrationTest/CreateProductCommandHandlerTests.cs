@@ -1,0 +1,33 @@
+using FluentValidation;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Product.Application.Commands;
+using Product.Application.Pipeline;
+using Product.Application.Validation;
+using Product.Infrastructure;
+
+namespace Product.IntegrationTest;
+
+public class CreateProductCommandHandlerTests
+{
+    [Fact]
+    public async Task Creates_product_and_returns_dto()
+    {
+        var services = new ServiceCollection();
+        services.AddLogging();
+        services.AddDbContext<ProductDbContext>(options => options.UseInMemoryDatabase("product-int-tests"));
+        services.AddMediatR(typeof(CreateProductCommand).Assembly);
+        services.AddValidatorsFromAssembly(typeof(CreateProductCommand).Assembly);
+        services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+        services.AddScoped(typeof(IPipelineBehavior<,>), typeof(TransactionBehavior<,>));
+
+        var provider = services.BuildServiceProvider();
+        var mediator = provider.GetRequiredService<IMediator>();
+
+        var result = await mediator.Send(new CreateProductCommand("Gadget", 10m));
+
+        Assert.NotEqual(Guid.Empty, result.Id);
+        Assert.Equal(10m, result.Price);
+    }
+}

@@ -1,0 +1,54 @@
+<Solution>
+  <Folder Name="/apps/" />
+  <Folder Name="/apps/seed/">
+    <Project Path="apps/seed/ModularMonolith.Seed.csproj" />
+  </Folder>
+  <Folder Name="/apps/web/">
+    <Project Path="apps/web/ModularMonolith.Web.csproj" />
+  </Folder>
+  <Folder Name="/apps/webapi/">
+    <Project Path="apps/webapi/ModularMonolith.WebApi.csproj" />
+  </Folder>
+  <Folder Name="/modules/" />
+  <Folder Name="/modules/Order/" />
+  <Folder Name="/modules/Order/Application/">
+    <Project Path="modules/Order/Application/Order.Application.csproj" />
+  </Folder>
+  <Folder Name="/modules/Order/Domain/">
+    <Project Path="modules/Order/Domain/Order.Domain.csproj" />
+  </Folder>
+  <Folder Name="/modules/Order/Infrastructure/">
+    <Project Path="modules/Order/Infrastructure/Order.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/modules/Order/IntegrationEvent/">
+    <Project Path="modules/Order/IntegrationEvent/Order.IntegrationEvent.csproj" />
+  </Folder>
+  <Folder Name="/modules/Order/tests/">
+    <Project Path="modules/Order/tests/Order.IntegrationTest/Order.IntegrationTest.csproj" />
+    <Project Path="modules/Order/tests/Order.UnitTest/Order.UnitTest.csproj" />
+  </Folder>
+  <Folder Name="/modules/Product/" />
+  <Folder Name="/modules/Product/Application/">
+    <Project Path="modules/Product/Application/Product.Application.csproj" />
+  </Folder>
+  <Folder Name="/modules/Product/Domain/">
+    <Project Path="modules/Product/Domain/Product.Domain.csproj" />
+  </Folder>
+  <Folder Name="/modules/Product/Infrastructure/">
+    <Project Path="modules/Product/Infrastructure/Product.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/modules/Product/IntegrationEvent/">
+    <Project Path="modules/Product/IntegrationEvent/Product.IntegrationEvent.csproj" />
+  </Folder>
+  <Folder Name="/modules/Product/tests/">
+    <Project Path="modules/Product/tests/Product.IntegrationTest/Product.IntegrationTest.csproj" />
+    <Project Path="modules/Product/tests/Product.UnitTest/Product.UnitTest.csproj" />
+  </Folder>
+  <Folder Name="/modules/User/" />
+  <Folder Name="/modules/User/Domain/">
+    <Project Path="modules/User/Domain/User.Domain.csproj" />
+  </Folder>
+  <Folder Name="/modules/User/Infrastructure/">
+    <Project Path="modules/User/Infrastructure/User.Infrastructure.csproj" />
+  </Folder>
+</Solution>
