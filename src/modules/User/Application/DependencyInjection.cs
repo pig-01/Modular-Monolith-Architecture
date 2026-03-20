@@ -1,4 +1,4 @@
-using FluentValidation;
+﻿using FluentValidation;
 using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,6 +27,13 @@ public static class DependencyInjection
             return factory.CreateDbContext();
         });
 
+        // Register UserDbContext by delegating to the factory so the connection string
+        // resolution logic lives in exactly one place (TenantUserDbContextFactory).
+        services.AddScoped<UserDbContext>(serviceProvider =>
+            serviceProvider.GetRequiredService<ITenantDbContextFactory<UserDbContext>>()
+                           .CreateDbContext());
+
+        // --- CQRS pipeline ---
         services.AddMediatR(typeof(DependencyInjection).Assembly);
         services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly);
         services.AddScoped(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
