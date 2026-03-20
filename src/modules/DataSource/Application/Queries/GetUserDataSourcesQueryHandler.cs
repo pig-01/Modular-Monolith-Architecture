@@ -1,0 +1,27 @@
+using DataSource.Application.Abstractions;
+using DataSource.Infrastructure;
+using MediatR;
+using Microsoft.EntityFrameworkCore;
+
+namespace DataSource.Application.Queries;
+
+public class GetUserDataSourcesQueryHandler : IRequestHandler<GetUserDataSourcesQuery, IReadOnlyList<DataSourceDto>>
+{
+    private readonly DataSourceDbContext _dbContext;
+
+    public GetUserDataSourcesQueryHandler(DataSourceDbContext dbContext)
+    {
+        _dbContext = dbContext;
+    }
+
+    public async Task<IReadOnlyList<DataSourceDto>> Handle(
+        GetUserDataSourcesQuery request,
+        CancellationToken cancellationToken)
+    {
+        return await _dbContext.DataSources
+            .Where(ds => ds.UserId == request.UserId)
+            .AsNoTracking()
+            .Select(ds => new DataSourceDto(ds.Id, ds.UserId, ds.Name, ds.Provider))
+            .ToListAsync(cancellationToken);
+    }
+}

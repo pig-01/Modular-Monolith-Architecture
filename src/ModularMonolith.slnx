@@ -3,13 +3,20 @@
   <Folder Name="/apps/seed/">
     <Project Path="apps/seed/ModularMonolith.Seed.csproj" />
   </Folder>
-  <Folder Name="/apps/web/">
-    <Project Path="apps/web/ModularMonolith.Web.csproj" />
-  </Folder>
   <Folder Name="/apps/webapi/">
     <Project Path="apps/webapi/ModularMonolith.WebApi.csproj" />
   </Folder>
   <Folder Name="/modules/" />
+  <Folder Name="/modules/DataSource/" />
+  <Folder Name="/modules/DataSource/Application/">
+    <Project Path="modules/DataSource/Application/DataSource.Application.csproj" />
+  </Folder>
+  <Folder Name="/modules/DataSource/Domain/">
+    <Project Path="modules/DataSource/Domain/DataSource.Domain.csproj" />
+  </Folder>
+  <Folder Name="/modules/DataSource/Infrastructure/">
+    <Project Path="modules/DataSource/Infrastructure/DataSource.Infrastructure.csproj" />
+  </Folder>
   <Folder Name="/modules/Order/" />
   <Folder Name="/modules/Order/Application/">
     <Project Path="modules/Order/Application/Order.Application.csproj" />

@@ -10,10 +10,14 @@ namespace Order.Application;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddOrderModule(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddOrderModule(
+        this IServiceCollection services,
+        IConfiguration configuration
+    )
     {
         services.AddDbContext<OrderDbContext>(options =>
-            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
+        );
 
         services.AddMediatR(typeof(DependencyInjection).Assembly);
         services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly);
